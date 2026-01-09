@@ -22,7 +22,7 @@ st.markdown("""
     <div class="footer">Developed by Areeb Khawer</div>
     """, unsafe_allow_html=True)
 
- 1. User selects the unit
+ #1. User selects the unit
 unit = st.sidebar.radio("Select Gold Unit:", ["Grams", "KG"])
 
 # 2. User inputs the weight
@@ -93,4 +93,5 @@ else:
 
 st.sidebar.markdown("### About this Tool")
 st.sidebar.write("This FinTech application uses real-time market data from Yahoo Finance to calculate Zakat accurately based on the current value of Gold in Pakistan.")
+
 
