@@ -22,6 +22,17 @@ st.markdown("""
     <div class="footer">Developed by Areeb Khawer</div>
     """, unsafe_allow_html=True)
 
+ 1. User selects the unit
+unit = st.sidebar.radio("Select Gold Unit:", ["Grams", "KG"])
+
+# 2. User inputs the weight
+weight_input = st.sidebar.number_input(f"Enter Gold Weight in {unit}", min_value=0.0, step=0.1)
+
+# 3. Logic to convert to grams for the calculation
+if unit == "KG":
+    gold_weight = weight_input * 1000  # Convert KG to Grams
+else:
+    gold_weight = weight_input
 st.title("🌙 Zakat & Wealth Intelligence (PKR)")
 st.write("Live market-linked Zakat calculator for the Pakistani financial landscape.")
 
@@ -37,17 +48,6 @@ def get_live_market_data():
     
     return ex_rate, gold_pkr_gram
 
- 1. User selects the unit
-unit = st.sidebar.radio("Select Gold Unit:", ["Grams", "KG"])
-
-# 2. User inputs the weight
-weight_input = st.sidebar.number_input(f"Enter Gold Weight in {unit}", min_value=0.0, step=0.1)
-
-# 3. Logic to convert to grams for the calculation
-if unit == "KG":
-    gold_weight = weight_input * 1000  # Convert KG to Grams
-else:
-    gold_weight = weight_input
 
 
 
@@ -93,3 +93,4 @@ else:
 
 st.sidebar.markdown("### About this Tool")
 st.sidebar.write("This FinTech application uses real-time market data from Yahoo Finance to calculate Zakat accurately based on the current value of Gold in Pakistan.")
+
